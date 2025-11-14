@@ -1,0 +1,169 @@
+.cart-modal .modal-dialog {
+  max-width: 400px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-info span {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.cart-item-info strong {
+  margin-top: 0.25rem;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item-actions button {
+  border: 1px solid #ccc;
+  background: none;
+  padding: 2px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cart-footer {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.cart-footer .subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cart-footer button {
+  width: 48%;
+}
+
+/* Fondo fijo que cubre toda la pantalla */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1040;
+}
+
+/* Panel lateral derecho fijo sin transición */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+}
+
+/* Estructura del contenido */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.cart-footer {
+  border-top: 1px solid #ddd;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Ítems del carrito */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* 🔹 Íconos dentro de los botones del carrito */
+.cart-item-buttons i {
+  color: #000; /* color negro */
+  font-size: 1rem; /* puedes aumentar a 1.2rem si los quieres más grandes */
+  vertical-align: middle; /* los centra verticalmente */
+}
+
+/* 🔹 Opcional: mejora la separación entre botones */
+.cart-item-buttons button {
+  margin-left: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* espacio horizontal entre botones */
+}
+
+.cart-item-buttons i {
+  color: #000; /* íconos negros */
+  font-size: 1rem;
+}
+
+.cart-item-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+}
