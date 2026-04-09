@@ -7,32 +7,40 @@ properties([
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = "mi-fronted-vite-app"
+        CONTAINER_NAME = "react-vite-container"
+        PORT = "5171"
+    }
+
     stages {
-        stage('Instalar dependencias') {
+
+        stage('Clonar repositorio') {
             steps {
-                bat 'yarn install'
+                checkout scm
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                bat 'yarn build'
+                bat "docker build -t %IMAGE_NAME% ."
             }
         }
 
-        stage('Docker Build') {
+        stage('Eliminar contenedor anterior') {
             steps {
-                bat 'docker build -t mi-fronted-vite-app .'
+                bat """
+                docker stop %CONTAINER_NAME% || exit 0
+                docker rm %CONTAINER_NAME% || exit 0
+                """
             }
         }
 
-        stage('Run Container') {
+        stage('Levantar contenedor') {
             steps {
-                bat '''
-                docker stop react-vite-container || exit 0
-                docker rm react-vite-container || exit 0
-                docker run -d -p 5171:80 --name react-vite-container mi-fronted-vite-app
-                '''
+                bat """
+                docker run -d -p %PORT%:80 --name %CONTAINER_NAME% %IMAGE_NAME%
+                """
             }
         }
     }
