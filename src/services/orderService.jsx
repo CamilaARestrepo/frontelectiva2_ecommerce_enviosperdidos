@@ -5,6 +5,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 export const orderService = {
   createPreorder: async (userId, orderData) => {
     const token = tokenService.getToken();
+    console.log("Creating preorder with data:", orderData);
     const response = await fetch(`${API_URL}/user/${userId}/preorder`, {
       method: "POST",
       headers: {

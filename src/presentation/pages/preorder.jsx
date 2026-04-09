@@ -84,7 +84,7 @@ const CheckoutPage = () => {
       setShowModal(true);
     } catch (error) {
       console.error(error);
-      toast.error("Error al crear la preorden.");
+      toast.error("Error al crear la preorden.",error);
     }
   };
 
