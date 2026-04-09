@@ -101,7 +101,7 @@ const Login = () => {
 
     setLoading(true);
     try {
-      const response = await registerService(data);
+      await registerService(data);
       toast.success("Usuario registrado correctamente ");
       resetRegister();
       setActiveTab("login");

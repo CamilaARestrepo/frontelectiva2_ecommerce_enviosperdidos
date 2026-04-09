@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { cartService } from "../../../../src/services/cartService";
-import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import "../../../styles/Car.css";
 import { toast } from "react-toastify";
@@ -10,7 +9,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 const CartModal = ({ show, onClose }) => {
   const [carrito, setCarrito] = useState([]);
   const navigate = useNavigate();
-  const userId = Cookies.get("userId");
 
   useEffect(() => {
     if (show) {

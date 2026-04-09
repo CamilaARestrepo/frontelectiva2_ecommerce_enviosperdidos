@@ -23,7 +23,6 @@ const Productos = () => {
 
   const handleAgregarCarrito = async (producto) => {
   const token = Cookies.get("token");
-  const userId = Cookies.get("userId");
 
   if (!token) {
     navigate("/login");
