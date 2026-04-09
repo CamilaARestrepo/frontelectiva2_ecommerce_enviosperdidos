@@ -39,7 +39,7 @@ function App() {
 
       <footer className="bg-light text-center py-3 mt-5">
         <p className="mb-0">© 2025 Mi E-commerce. Todos los derechos reservados.</p>
-        <p className="mb-0">© james me esta presionando.</p>
+        <p className="mb-0">© Ahora si.</p>
       </footer>
     </Router>
   );
