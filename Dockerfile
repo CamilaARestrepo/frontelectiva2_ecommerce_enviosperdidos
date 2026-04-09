@@ -18,10 +18,8 @@ RUN yarn build
 # Etapa 2: producción con nginx
 FROM nginx:alpine
 
-# Copiamos el build generado por Vite
-COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Exponemos puerto 80
+COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
