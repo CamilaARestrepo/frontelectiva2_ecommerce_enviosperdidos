@@ -1,19 +1,3 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
 # Proyecto Frontend - Ecommerce
 
@@ -39,8 +23,7 @@ escalable, claro y fácil de mantener.
 -   **Vite**
 -   **React Router**
 -   **Cookies (js-cookie)**
--   **Axios** para consumo de API
--   **MDB React UI Kit** (si aplica)
+-   **Fech** para consumo de API
 -   **React Toastify** para notificaciones
 
 ------------------------------------------------------------------------
@@ -63,13 +46,18 @@ Custom hooks
 
 ``` bash
 src/
-  components/
-  pages/
-  services/
-  hooks/
-  context/
-  styles/
-  router/
+  assets/               # Imágenes, íconos, fuentes, etc.
+  presentation/         # Contenedor principal de la capa visual
+    components/         # Componentes reutilizables (modales...)
+    pages/              # Vistas o pantallas completas (Home, Login)
+    services/           # Servicios para comunicación con la API 
+    styles/             # Archivos CSS o módulos de estilos
+    utils/              # Funciones auxiliares 
+
+  App.jsx               # Componente raíz principal
+  App.css               # Estilos globales
+  index.css             # Estilos base
+  main.jsx              # Punto de entrada del proyecto
 ```
 
 ------------------------------------------------------------------------
@@ -79,26 +67,20 @@ src/
 ### 1️⃣ Clonar el repositorio
 
 ``` bash
-git clone <url-repo>
-cd <nombre-proyecto>
+git clone <https://github.com/CamilaARestrepo/frontelectiva2_ecommerce_enviosperdidos.git>
+cd <frontendecommerce>
 ```
 
 ### 2️⃣ Instalar dependencias
 
 ``` bash
-npm install
+yarn
 ```
 
 ### 3️⃣ Ejecutar en modo desarrollo
 
 ``` bash
-npm run dev
-```
-
-### 4️⃣ Construir para producción
-
-``` bash
-npm run build
+yarn dev
 ```
 
 ------------------------------------------------------------------------
@@ -123,7 +105,7 @@ pruebas o producción).
 ## 🍪 Manejo de Cookies
 
 El proyecto utiliza **js-cookie** para: - Guardar token de
-autenticación - Guardar información del carrito (si aplica)
+autenticación - Guardar información del carrito 
 
 Ejemplo de uso:
 
@@ -131,25 +113,3 @@ Ejemplo de uso:
 Cookies.set("token", token, { expires: 1 });
 ```
 
-------------------------------------------------------------------------
-
-## 🛠️ Scripts Disponibles
-
--   `npm run dev`: Ejecuta el entorno de desarrollo
--   `npm run build`: Construye la aplicación
--   `npm run preview`: Previsualiza la versión de producción
-
-------------------------------------------------------------------------
-
-## 🧪 Buenas Prácticas Implementadas
-
--   Separación de lógica en **services**
--   Manejo de rutas en archivo centralizado
--   Componentización limpia
--   Reutilización de estilos
-
-------------------------------------------------------------------------
-
-## 📧 Contacto
-
-Si deseas soporte o realizar mejoras, puedes comunicarte conmigo.
